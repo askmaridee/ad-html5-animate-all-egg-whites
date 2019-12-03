@@ -1,0 +1,312 @@
+<div id="hc_richmedia">
+	<script type="text/javascript">
+		if(!window.jQuery || !window.$) {
+			document.write('\x3Cscript src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript">\x3C/script>');
+		}
+	</script>
+	<script type="text/javascript" src="mraid.js"></script>
+	<style type="text/css">	  /* Reset Styles***********************/
+	  html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed,figure, figcaption, footer, header, hgroup,menu, nav, output, ruby, section, summary,time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	  }
+	  /* HTML5 display-role reset for older browsers */
+	  article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+	  body {line-height: 1;}
+	  ol, ul {list-style: none;}
+	  blockquote, q {quotes: none;}
+	  blockquote:before, blockquote:after,q:before, q:after {content: ''; content: none;}
+	  table {border-collapse: collapse; border-spacing: 0;}
+	  strong {font-weight: bold;}
+	  em {font-style: italic;}
+				  
+	  /* apply a natural box layout model to all elements */
+	  *, *:before, *:after {
+		-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+	   }
+	  
+
+	body {margin: 0px;}
+	#hc_richmedia {
+		position:relative;
+		width:300px;
+		margin:0 auto;
+      /*border:solid 1px red;*/
+	}
+	#hc_richmedia .hc_initial_view {
+		position:relative;
+		z-index:1;
+	}
+	#hc_richmedia .hc_content {
+		position:relative;
+		width:300px;
+		height:300px;
+		text-align:center;
+		z-index:1;
+		overflow: hidden;
+	}
+	#hc_richmedia .hc_closebtn {
+		position:absolute;
+		top: .3em;
+		right: .3em;
+		z-index:2;
+		cursor:pointer;
+		color: white;
+		font-family: Helvetica, Arial, sans-serif;
+	}
+	#hc_richmedia .hc_closebtn img {
+		position:relative;
+		z-index:20;
+	}
+	#hc_richmedia .hc_content h3 {
+		margin-top:0;
+	}
+	#hc_richmedia .hc_blockimg {
+		display:block;
+	}
+	a img {border: none;}
+	/* custom styles */
+	#hc_noclick1 {
+		position:relative;
+		width:320px;
+		height:461px;
+	}
+	
+	#tap_high_protein_recipes {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	height: 29px;
+	width: 230px;	
+	z-index:100;
+	display:none;
+	}
+	#final_frame {
+		position:absolute; 
+		top:-300px;
+	 left:0px;
+	 }
+	 #animate {
+		 position:absolute; 
+		 top:0px;
+	 	left:0px;
+	 }
+	</style>
+	
+	<div class="hc_initial_view">		
+		<a href="#" id="hc_expand" onclick="jQuery.hc_rm.expand(event); return false;">		
+			<img class="hc_banner hc_blockimg" src="images/37796.jpg" style="width:300px;height:50px;" />
+		</a>	
+
+	</div><!-- end initial view content -->
+	
+	<div class="hc_content" id="hc_content" style="display:none;">
+
+		<div id="hc_click">
+          <img id="animate" height="300" width="600" alt="" src="images/38016.jpg" />
+          <img id="final_frame" height="300" width="300" alt="" src="images/38014.jpg" />           	                 
+          <a href="http://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=tf&c=20&mc=click&pli=9045233&PluID=0&ord=" id="tap_high_protein_recipes" class="hc_click" data-trackinglabel="tap_high_protein_recipes"></a>
+		</div>
+        
+        
+		<div class="hc_closebtn" id="hc_closebtn" style="display:none;" onclick="jQuery.hc_rm.collapse(event); return false;">X</div>
+	
+	</div><!-- end reveal content -->
+
+	<script type="text/javascript">
+		/* DO NOT USE slashes for comments. */
+		/* use .toggle to reveal from left to right, down */
+		/* use .slideToggle to reveal from top to bottom */
+		/* any closing html tags must have the forward slash escaped,e.g. <\/div> */
+		(function ($) {
+
+		    var fifheight;
+
+		    $.hc_rm = {
+		        getQP: function (p) {
+		            if (window.location && typeof window.location.search === "string") {
+		                var qArray = window.location.search.substr(1).split("&"),
+		                    qParam, i;
+		                for (i = 0; i < qArray.length; i++) {
+		                    qParam = qArray[i].split("=");
+		                    if (qParam.length === 2 && qParam[0] === p) {
+		                        return unescape(qParam[1]);
+		                    }
+		                }
+		            }
+		            return false;
+		        },
+		        /*getSQP: function (p) {
+		            var scriptSrc = $("script[src*='as.aug.me']").attr('src');
+		            var tmp = scriptSrc.split("?");
+		            if (tmp.length > 1) {
+		                var qArray = tmp[1].split("&"),
+		                    qParam, i;
+		                for (i = 0; i < qArray.length; i++) {
+		                    qParam = qArray[i].split("=");
+		                    if (qParam.length === 2 && qParam[0] === p) {
+		                        return unescape(qParam[1]);
+		                    }
+		                }
+		            }
+		            return false;
+		        },*/
+		        expand: function (e) {
+		            if (!e) {
+		                e = window.event;
+		            }
+		            e.cancelBubble = true;
+		            if (e.stopPropagation) e.stopPropagation();
+		            /* FIF support */
+		            if (window.inDapIF === true) {
+		                $("iframe", parent.document).each(function (iel, el) {
+		                    if (el.contentWindow === window) {
+		                        fifheight = $(el).css("height");
+		                        $(el).css("height", "511px");
+		                        return false;
+		                    }
+		                });
+		            }
+		            /* mraid function call */
+		            if (typeof mraid !== "undefined") {
+		                mraid.useCustomClose(true);
+		                mraid.expand();
+		            }
+		            /* animations for expand */
+		            $("#hc_richmedia .hc_content").show();
+		            $("#hc_richmedia .hc_closebtn").show();
+		            $('.hc_initial_view').hide();
+		            bg_animate();
+					 (new Image).src = "http://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=tf&c=19&mc=imp&pli=9045233&PluID=0&ord=";
+
+		            /* Hip expansion tracking */
+		            $("#hc_richmedia").append('<img src="#trk:expansion#?cb=' + new Date().getTime() + '" style="position:absolute;height:1px;width:1px;" />');
+
+		            /* 3rd party expansion tracker */
+		            /*if (this.getSQP('exp') !== false) {
+		                $("#hc_richmedia").append('<img src="' + decodeURIComponent(this.getSQP('exp')) + '" style="position:absolute;height:1px;width:1px;" />');
+		            }*/
+
+		            return false;
+		        },
+		        collapse: function (e) {
+		            if (!e) {
+		                e = window.event;
+		            }
+		            e.cancelBubble = true;
+		            if (e.stopPropagation) e.stopPropagation();
+		            /* FIF support */
+		            if (window.inDapIF === true) {
+		                $("iframe", parent.document).each(function (iel, el) {
+		                    if (el.contentWindow === window) {
+		                        $(el).css("height", fifheight);
+		                        return false;
+		                    }
+		                });
+		            }
+		            /* mraid function call */
+		            if (typeof mraid !== "undefined") {
+		                mraid.close();
+		            }
+		            /* animations for collapse */
+		            $("#hc_richmedia .hc_content").hide();
+		            $("#hc_richmedia .hc_closebtn").hide();
+		            $("#hc_richmedia").append('<img src="#trk:collapse#?cb=' + new Date().getTime() + '" style="position:absolute;height:1px;width:1px;" />');
+		            $('.hc_initial_view').show();
+		            animation_reset();
+
+		            return false;
+		        },
+		        engage: function (e) {
+		            if (!e) {
+		                e = window.event;
+		            }
+		            e.cancelBubble = true;
+		            if (e.stopPropagation) e.stopPropagation();
+		            $("#hc_richmedia").append('<img src="#trk:engage#?cb=' + new Date().getTime() + '" style="position:absolute;height:1px;width:1px;" />');
+		            return false;
+		        }
+
+		    };
+
+		}(jQuery));
+
+		/* Add mraid lister */
+		if (typeof mraid !== "undefined") {
+		    mraid.addEventListener("stateChange", handleStateChanges);
+		}
+
+		/* Mraid Handle State Change */
+		function handleStateChanges() {
+
+		    switch (mraid.getState()) {
+		    case "expanded":
+		        jQuery.hc_rm.expand();
+		        break;
+		    case "default":
+		        jQuery.hc_rm.collapse();
+		        break;
+		    }
+
+		}
+
+		var settimerscount = new Array();
+
+		function bg_animate() {
+		    settimerscount.push(setTimeout(function () {
+		        $('#animate').animate({
+		            'left': '-300px',
+		            'top': '0px'
+		        }, 1000, 'linear', function () {})
+		    }, 3000));
+		    settimerscount.push(setTimeout(function () {
+		        $('#animate').animate({
+		            'left': '-300px',
+		            'top': '301px',
+		            'opacity': '0.2'
+		        }, 1500, 'linear', function () {
+
+		        })
+		    }, 5000));
+		    settimerscount.push(setTimeout(function () {
+		        $('#final_frame').animate({
+		            'left': '0px',
+		            'top': '0px'
+		        }, 1400, 'linear', function () {
+		            $('#tap_high_protein_recipes').css('display', 'block');
+		        })
+		    }, 5000));
+		}
+
+		function animation_reset() {
+
+		    $("#animate").stop(true, true);
+		    $("#final_frame").stop(true, true);
+		    clearsetTimeout();
+		    $('#animate').css({
+		        'top': '0px',
+		        'position': 'absolute',
+		        'left': '0px',
+		        'opacity': '1'
+		    });
+		    $('#final_frame').css({
+		        'top': '-301px',
+		        'position': 'absolute',
+		        'left': '0px !important'
+		    });
+		    $('#tap_high_protein_recipes').css('display', 'none');
+		}
+
+		function clearsetTimeout() {
+		    for (var i = 0; i < settimerscount.length; i++) {
+		        clearTimeout(settimerscount[i]);
+		    }
+		}
+
+	</script>
+	
+</div><!-- end required wrapper -->
